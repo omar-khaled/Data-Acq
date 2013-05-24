@@ -1,0 +1,8 @@
+<h1 align="center">Register</h1>
+<br>
+<br>
+<%= form_for @user do |f| %>
+<%= render :partial => "form",  :object => f, :locals => { :user => @user } %>
+<div align="center"><%= f.submit "Register" %></div>
+<% end %>
+

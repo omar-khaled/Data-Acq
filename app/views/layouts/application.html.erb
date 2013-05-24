@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Data acquisition</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <nav>
+  	<% if current_user != nil %>
+		<% flash.each do |key, value| %>
+				<div class="<%= flash_class(key) %>">
+					<%= value %>
+				</div>
+		<% end %>
+            <ul class="nav pull-right" style=>
+				<ul class="nav nav-pills">
+			        <li><a href="logout">Logout</a></li>
+			    </ul>
+			</ul>
+	<% end %>
+  </nav>
+</head>
+
+<body>
+
+<%= yield %>
+
+</body>
+</html>

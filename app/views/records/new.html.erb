@@ -1,0 +1,14 @@
+<div class="well" style="  display:block; position:absolute; margin-top:10%; margin-left:35%; width:300px;">
+<%= form_tag 'test', :multipart => true do %>
+   <div class="label label-info" for="file" align="center">
+   	<font size="4">Upload measurements file</font>
+   	</div> 
+   <%= file_field_tag "file" %>
+   <%= submit_tag %>
+<% end %>
+<div align="center" style="margin-bottom:1%;margin-top:1%;">
+  <td align="center"><span><%= link_to 'Back', 
+  {:controller => 'records', :action => 'index'}, 
+    class: "btn"%></span></td>
+</div>
+

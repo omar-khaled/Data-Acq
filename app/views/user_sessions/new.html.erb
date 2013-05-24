@@ -1,0 +1,26 @@
+<div class="well" style="  display:block; position:absolute; margin-top:10%; margin-left:35%; width:300px;">
+<h3>Please enter your email and password to login.</h3>
+<br>
+<br>
+  <%= form_for @user_session, :as => :user_session, :url => { :action => "create" } do |f| %>
+    <% if @user_session.errors.count == 1 && @user_session.errors.full_messages[0] != "You did not provide any details for authentication." %>
+      <div class="alert alert-error">
+          <%= render "shared/error_messages", :target => @user_session %>
+      </div>
+    <% end %>
+  <table style="width:300px;">
+  <tr>
+    <td align="left"><h3><%= f.label :email %></h3></td>
+    <td align="right"><%= f.text_field :email %></td>
+  </tr>
+  <tr>
+    <td align="left"><h3><%= f.label :password %></h3></td>
+    <td align="right"><%= f.password_field :password %></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td  align="center"><%= f.submit "     Log in    "%></td>
+  </tr>
+  </table>
+<% end %>
+</div>
